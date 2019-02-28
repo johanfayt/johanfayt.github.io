@@ -20,12 +20,14 @@
 	var listimages = ["page1.png", "page2.png","page3.png", "page4.png","page5.png", "page6.png"];
 	var index = 0;
 	
+	var myVar = setTimeout(TimerFunction ,5000);
+	
 	function myFunction() 
 	{
-		var imgid = document.getElementById("imgid");
-				
-		console.log(index);
-		console.log("listimages "+listimages.length);
+		clearTimeout(myVar);
+		myVar = setTimeout(TimerFunction ,5000);
+	
+		var imgid = document.getElementById("imgid");				
 
 		if(index < listimages.length-1)
 		{
@@ -39,6 +41,12 @@
 		imgid.src = "page/"+listimages[index];	
 
 	}
+	
+	function TimerFunction() 
+	{
+		myFunction();
+	}
+	
 	</script>
 
   </body>
