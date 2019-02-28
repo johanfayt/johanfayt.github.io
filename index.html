@@ -2,10 +2,42 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Johan Fayt Fortofolio</title>
   </head>
-  <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+  <body onkeydown ="myFunction();">
+  
+	<!-- The four columns -->
+	<div class="container">
+	  <div class="imagepage">
+		<img id ="imgid" src="page/page1.png" alt="" style="width:100%" onclick="myFunction();">
+	  </div>		  
+	</div>	
+	
+	<script>
+	
+	var listimages = ["page1.png", "page2.png","page3.png", "page4.png","page5.png", "page6.png"];
+	var index = 0;
+	
+	function myFunction() 
+	{
+		var imgid = document.getElementById("imgid");
+				
+		console.log(index);
+		console.log("listimages "+listimages.length);
+
+		if(index < listimages.length-1)
+		{
+			index += 1;
+		}
+		else		
+		{
+			index = 0;
+		}
+		
+		imgid.src = "page/"+listimages[index];	
+
+	}
+	</script>
+
   </body>
 </html>
